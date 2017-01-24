@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Update Data</title>
+</head>
+<body>
+  <table>
+    <div class="form-submit">
+      <form id="user-form" action="/update" method="post">
+        <fieldset>
+          <div class="form-group">
+            <label for="exampleInputId" >Id User</label>
+            <input type="text" class="form-control" name="id" value="<%= hasil.id%>" readonly="true" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFirstname" >Firstname</label>
+            <input type="text" class="form-control" name="firstname" value="<%= hasil.firstname%>"/>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputLirstname">Lastname</label>
+            <input type="text" class="form-control" name="lastname" value="<%= hasil.lastname%>"/>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPhoneNum">Phone Number</label>
+            <input type="text" class="form-control" name="phone" value="<%= hasil.phone%>"/>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </fieldset>
+        </form>
+      </table>
+    </div>
+  </body>
+  </html>

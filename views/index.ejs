@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Book</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="table-responsive">
+      <h2>Contact Book</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr class="success">
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% result.forEach(function(val){ %>
+          <tr class="active">
+            <td><%= val.id %></td>
+            <td><%= val.firstname %></td>
+            <td><%= val.lastname %></td>
+            <td><%= val.phone %></td>
+            <td><a href="/edit/<%= val.id %>" class="btn btn-info">Update</a>&nbsp|&nbsp<a href="/delete/<%= val.id %>" class="btn btn-warning">Delete</a></td>
+            <% }) %>
+         </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="form-submit">
+      <form id="user-form" action="/add" method="post">
+        <div class="form-group">
+          <label for="exampleInputFirstname">Firstname</label>
+          <input type="text" class="form-control" name="firstname" placeholder="Firstname"/>
+          <label for="exampleInputLirstname">Lastname</label>
+          <input type="text" class="form-control" name="lastname" placeholder="Lastname"/>
+          <label for="exampleInputPhoneNum">Phone Number</label>
+          <input type="text" class="form-control" name="phonenumber" placeholder="Phone Number"/>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
