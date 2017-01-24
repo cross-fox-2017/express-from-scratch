@@ -18,5 +18,8 @@
   "homepage": "https://github.com/cross-fox-2017/express-from-scratch#readme",
   "dependencies": {
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
