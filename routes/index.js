@@ -6,7 +6,7 @@ let user = models.User
 
 routes.get('/', function(req, res){
   user.findAll().then(function(data){
-    res.json(data)
+    res.render('home', {data: data})
   })
 });
 
@@ -15,11 +15,16 @@ routes.post('/', function(req, res, next){
   let lastname = req.body.lastname
   let phone = req.body.phone
   user.create({firstname: firstname, lastname: lastname, phone: phone}).then(function(data) {
-    res.json(data)
+    res.redirect('/')
+  })
+});
+routes.get('/update/:id', function(req, res){
+  user.findById(req.params.id).then(function(data){
+    res.render('update', {data: data})
   })
 });
 
-routes.put('/:id', function(req, res){
+routes.post('/update/:id', function(req, res){
   let id = req.params.id
   let firstname = req.body.firstname
   let lastname = req.body.lastname
@@ -30,16 +35,16 @@ routes.put('/:id', function(req, res){
       lastname: lastname,
       phone: phone
     }).then(function(data){
-      res.json(data)
+      res.redirect('/')
     })
   })
 });
 
-routes.delete('/:id', function(req, res){
+routes.get('/delete/:id', function(req, res){
   let id = req.params.id
   user.findById(id).then(function(user){
     user.destroy().then(function(data) {
-      res.json(data)
+      res.redirect('/')
     })
   })
 })

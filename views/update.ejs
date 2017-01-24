@@ -1,0 +1,8 @@
+<% include header %>
+  <form class="" action="/update/<%= data.id %>" method="post">
+    <input type="text" name="firstname" value="<%= data.firstname %>">
+    <input type="text" name="lastname" value="<%= data.lastname %>">
+    <input type="text" name="phone" value="<%= data.phone %>">
+    <input type="submit" value="submit">
+  </form>
+<% include footer %>
