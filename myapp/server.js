@@ -1,12 +1,19 @@
-'use strict'
+"use strict"
 
 const express = require('express')
-var index = require('./routes/index');
+const app = express()
+const path = require('path')
+const bodyParser = require('body-parser');
+const index = require('./routes/index');
+const users = require('./routes/users');
 
-let app = express()
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-app.use('/', index);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.listen(3000)
+app.use('/', users);
+app.use('/users', users);
 
-module.exports = app;
+app.listen(4000)
