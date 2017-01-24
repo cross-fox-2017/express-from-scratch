@@ -3,19 +3,17 @@
 <h1><%=title%></h1>
 <table style="width:100%" border="1">
   <tr>
-    <th>title</th>
-    <th>is_complete</th>
-    <th>user_email</th>
-    <th>createdAt</th>
+    <th>first name</th>
+    <th>last name</th>
+    <th>phone</th>
     <th>Action</th>
   </tr>
-  <% for(var i=0;i<tododata.length;i++){%>
+  <% for(var i=0;i<use.length;i++){%>
   <tr>
-    <td><%=tododata[i].title%></td>
-    <td><%=tododata[i].is_complete%></td>
-    <td><%=tododata[i].User.email %></td>
-    <td><%=tododata[i].createdAt %></td>
-    <td><a href="update/<%=tododata[i].id%>"> Update </a>||<a href="/delete/<%=tododata[i].id%>"> Delete </a></td>
+    <td><%=use[i].first_name%></td>
+    <td><%=use[i].last_name%></td>
+    <td><%=use[i].phone %></td>
+    <td><a href="/update/<%=use[i].id%>"> Update </a>||<a href="/delete/<%=use[i].id%>"> Delete </a></td>
   </tr>
   <% }%>
 </table>
