@@ -1,0 +1,47 @@
+<% include ../partials/header %>
+    <div class="container">
+      <div class="row">
+        <div class="title" style="text-align: center;">
+          <h1>CRUD User</h1>
+        </div>
+        <br>
+        <table class="table table-bordered">
+          <thead style="background-color: rgba(255, 230, 128, 0.8);">
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </thead>
+          <tbody>
+            <% for(let i = 0; i < data.length; i++){ %>
+            <tr>
+              <td><%= data[i].id %></td>
+              <td><%= data[i].firstname %></td>
+              <td><%= data[i].lastname %></td>
+              <td><%= data[i].phone %></td>
+              <td><a href="/users/update/<%= data[i].id %>" class="btn btn-primary">Update</a>&nbsp&nbsp&nbsp&nbsp<a href="users/delete/<%= data[i].id %>" onclick="popup(<%= data[i].id %>)" class="btn btn-danger">Delete</a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <hr>
+        <h2>Add User</h2>
+        <form action="/users/add" method="post">
+          <div class="form-group">
+            <label for="first-name">First Name: </label>
+            <input type="text" class="form-control" name="firstname" id="first-name" value="" placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name: </label>
+            <input type="text" class="form-control" name="lastname" id="last-name" value="" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number: </label>
+            <input type="text" class="form-control" name="phone" id="phone" value="" placeholder="Phone Number">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+<% include ../partials/footer %>
