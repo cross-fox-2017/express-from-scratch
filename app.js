@@ -2,10 +2,7 @@
 
 let express = require ('express')
 let app = express()
+let router = require('./routes/index')
 
-app.get('/', function (request, response) {
-  response.send('Tes')
-})
-
-
+app.use('/', router)
 app.listen(3000)

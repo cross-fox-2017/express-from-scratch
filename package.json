@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/cross-fox-2017/express-from-scratch#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "sequelize": "^3.29.0",
+    "sqlite3": "^3.1.8"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
