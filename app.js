@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/', index);
+app.use('/', users);
 app.use('/users', users);
 
 app.listen(3000)

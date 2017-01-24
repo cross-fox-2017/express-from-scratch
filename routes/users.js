@@ -23,14 +23,14 @@ router.post('/update', function (req, res, next){
       lastname: req.body.lastname,
       phone: req.body.phone
     }).then(function(){
-      res.redirect('/users')
+      res.redirect('/')
     })
   })
 })
 
 router.post('/add', function (req, res, next){
   models.Users.create({firstname: req.body.firstname, lastname: req.body.lastname, phone: req.body.phone, createdAt: new Date()}).then(function (data) {
-    res.redirect('/users')
+    res.redirect('/')
   })
 })
 
@@ -40,7 +40,7 @@ router.get('/delete/:id', function (req, res, next){
       id: req.params.id
     }
   })
-  res.redirect('/users')
+  res.redirect('/')
 })
 
 
