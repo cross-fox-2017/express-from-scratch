@@ -1,0 +1,32 @@
+{
+  "name": "express-from-scratch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cross-fox-2017/express-from-scratch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cross-fox-2017/express-from-scratch/issues"
+  },
+  "homepage": "https://github.com/cross-fox-2017/express-from-scratch#readme",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "nodemon": "^1.11.0",
+    "pug": "^2.0.0-beta7",
+    "sequelize": "^3.29.0",
+    "sequelize-cli": "^2.5.1",
+    "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {}
+}
