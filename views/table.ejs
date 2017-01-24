@@ -1,0 +1,29 @@
+<div class="container">
+<table class= "table table-bordered">
+  <thead>
+    <th>ID</th>
+    <th>firstname</th>
+    <th>lastname</th>
+    <th>phone</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+  <% data.forEach(function(data){ %>
+    <tr>
+      <td><%= data.id %></td>
+      <td><%= data.firstname %></td>
+      <td><%= data.lastname %></td>
+      <td><%= data.phone %></td>
+      <td>
+        <form class="" action="/update/<%= data.id %>" method="get">
+          <button type="submit" class="btn btn-success">update</button>
+        </form>
+        <form class="" action="/delete/<%= data.id %>" method="get">
+          <button type="submit" class="btn btn-danger">delete</button>
+        </form>
+      </td>
+    </tr>
+  <% }) %>
+  </tbody>
+</table>
+</div>
