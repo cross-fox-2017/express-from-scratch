@@ -23,15 +23,19 @@ router.get('/update/:id',function(req,res){
 
 router.post('/updates',function(req,res){
   db.User.findById(req.body.id).then(function(use){
-    use.update({first_name:req.body.fname,last_name:req.body.lname,phone:req.body.phone})
-    res.redirect('/')
+    use.update({first_name:req.body.fname,last_name:req.body.lname,phone:req.body.phone}).then(function(){
+      res.redirect('/')
+    })
+
     })
 });
 
 router.get('/delete/:id',function(req,res){
   db.User.findById(req.params.id).then(function(use){
-    use.destroy()
-    res.redirect('/')
+    use.destroy().then(function(){
+      res.redirect('/')
+    })
+
     })
 });
 
