@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1><%= title %></h1>
+      <br />
+        <div class="row">
+          <div class="col-md4">
+            <table class="table table-hover">
+              <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Update</th>
+                <th>Delete</th>
+              </tr>
+              <% for(var i=0; i< result.length; i++){ %>
+              <tr>
+                <td><%= result[i].id %></td>
+                <td><%= result[i].firstname %></td>
+                <td><%= result[i].lastname %></td>
+                <td><%= result[i].phone %></td>
+                <td><a href="/update/<%=result[i].id%>"> Update </a></td>
+                <td><a href="/delete/<%=result[i].id%>"> Delete </a></td>
+              </tr>
+              <%}%>
+            </table>
+          </div>
+
+
+          <div class="row">
+            <form action="/" method="post">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="phone" placeholder="Phone">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <button type="submit" value="Submit" class="btn btn-success">Submit</button>
+                  </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+  </body>
+</html>
