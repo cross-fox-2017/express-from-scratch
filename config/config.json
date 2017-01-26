@@ -1,6 +1,6 @@
 {
   "development": {
-    "storage": "db/database.db",
+    "storage": "db/data.db",
     "host": "127.0.0.1",
     "dialect": "sqlite"
   },
