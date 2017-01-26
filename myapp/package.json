@@ -1,0 +1,23 @@
+{
+    "name": "myapp",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "keywords": [],
+    "description": "",
+    "dependencies": {
+        "body-parser": "^1.16.0",
+        "ejs": "^2.5.5",
+        "express": "^4.14.0",
+        "sequelize-cli": "^2.5.1",
+        "sqlite3": "^3.1.8"
+    },
+    "devDependencies": {
+        "faker": "^3.1.0"
+    }
+}
